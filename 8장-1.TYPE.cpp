@@ -10,6 +10,13 @@ void main (){
         char  first;
         char  second;
     } twoChars;
+    // ---------------------------- 교수님 코드 -------------------------------------
+    struct charType {
+        char a;
+        char b;
+    };
+    struct charType newchar;
+    // ---------------------------- 교수님 코드 -------------------------------------
     // 위의 타입으로 두 개의 변수를 정의한다.
     twoChars state1;
     twoChars state2;
@@ -17,6 +24,9 @@ void main (){
     state1.first = 'M';
     state1.second = 'N';
     // 두 변수가 같은 타입이다.
+    // ---------------------------- 교수님 코드 -------------------------------------
+    state2 = newchar; // state2의 타입은 twoChair, newchar의 타입은 '익명타입'이다.
+    // ---------------------------- 교수님 코드 -------------------------------------
     state2 = state1;//type compatible
     // 이것은 struct를 조작할 수 있는 공개 데이터이므로
     // 그래서 변수 state2의 값은 다음 문장에 의해 변경 될 수 있다.
