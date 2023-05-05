@@ -15,7 +15,7 @@ public:
     // 동적 binding을 사용하는 virtual 함수
     virtual void Print (){
 	//void Print() {
-        cout << "Person::내 이름은 " << name << endl;
+        cout << "Person::Print() : 내 이름은 " << name << endl;
     }
 };
 
@@ -24,17 +24,27 @@ public:
     Foreigner (char* n) : Person (n)
     { }    
     void show() {
-        cout << "Person::show()" << name << endl;
+        cout << "Foreigner::show()" << name << endl;
 
     }
     void Print (){
         // Foreigner을 위한 이름은 ...
-        cout << "Foreigner::My name is " << name << endl;
+        cout << "Foreigner::Print() : My name is " << name << endl;
     }
 } ;
 void main(){
     Person * man;
-    Person * woman;
+    Foreigner * woman;
+    //------------------------------ 교수님 코드 ------------------------------------//
+    // 포인터가 아니면 동적바인딩 안한다.
+    Person p("박");
+    Foreigner f("김");
+    p.Print();
+    f.Print();
+    p = f;
+    // f = p;
+    p.Print();
+    //------------------------------ 교수님 코드 ------------------------------------//
     // 초기화
     man = new Person ("John");
     woman = new Foreigner ("Paola");

@@ -19,7 +19,7 @@ class B : public A {
 public:
     B ( ) { }
     void Dynamic () {
-		//A::Dynamic();
+		A::Dynamic();
         cout << "B::Dynamic function of class B" << endl;   
     }
     void Static () {
